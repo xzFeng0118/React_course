@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Create VirtualDOM with js</title>
+    </head>
+    <body>
+        <!-- Prepare a container-->
+        <div id="test"></div>
+
+        <!-- import react core library-->
+        <script type="text/javascript" src="../js/react.development.js"></script>
+        <!-- import react-dom to support the react to control the DOM-->
+        <script type="text/javascript" src="../js/react-dom.development.js"></script>
+
+        <script type="text/javascript">
+            //1.Create a virtual DOM
+            const VDOM = React.createElement('h1', {id:'title'}, React.createElement('span', {}, 'Hello React'))
+            //2.Make the virtual DOM display on the UI
+            ReactDOM.render(VDOM, document.getElementById('test'))
+        </script>
+
+    </body>
+</html>
