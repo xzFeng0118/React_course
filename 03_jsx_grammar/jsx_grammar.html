@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Jsx grammar</title>
+        <style>
+            .title{
+                background-color: orange;
+                width: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Prepare a container-->
+        <div id="test"></div>
+
+        <!-- import react core library-->
+        <script type="text/javascript" src="../js/react.development.js"></script>
+        <!-- import react-dom to support the react to control the DOM-->
+        <script type="text/javascript" src="../js/react-dom.development.js"></script>
+        <!-- import babel to support the function to transfer jsx into js-->
+        <script type="text/javascript" src="../js/babel.min.js"></script>
+
+
+        <script type="text/babel">
+
+            //1.Create a virtual DOM
+            /*const VDOM = (
+                <h2 id="heading">
+                    <span>Hello React</span>
+                </h2>
+            )
+            */
+           //jsx
+           const myId = 'heading'
+           const myData = 'HelLo ReAct'
+           const VDOM = (
+            <div>
+                <h2 className="title" id={myId.toLowerCase()}>
+                    <span style={{color: 'white', fontSize:'30px'}}>{myData.toLowerCase()}</span>
+                </h2>
+                <input type="text" />
+            </div>
+            )
+
+            //2.Display the virtual DOM on screen
+            ReactDOM.render(VDOM,document.getElementById('test'))
+
+            /*
+                jsx grammar
+                    1.No quotation marks during the process of defining virtual DOM
+                    2.Js in label should be contained in the {}
+                    3.Use className instead of class in style(Use class after version 18, need to be tested)
+                    4.style inline format is: style={{key:value}}, use uppercase instead of '-'
+                    5.Virtual DOM only has one root label
+                    6.The first letter in labels:
+                        (1).If its lowercase, transfer into the label in html with same name
+                        (2).If its uppercase, react would render the corresponding component 
+                        (3).Else if no element in html has same name, or component hasn't been defined, error appears.
+            */
+        </script>
+
+    </body>
+</html>
