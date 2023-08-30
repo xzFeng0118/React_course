@@ -13,3 +13,5 @@ features
   2. Use React grammar to develop for mobile end in React Native.
   3. Use virtual DOM + Diffing algorithm to reduce interaction with real DOM
 
+JSON:- parse
+     - stringify
