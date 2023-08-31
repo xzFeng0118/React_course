@@ -3,13 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Jsx grammar</title>
-        <style>
-            .title{
-                background-color: orange;
-                width: 200px;
-            }
-        </style>
+        <title>Practice with jsx</title>
     </head>
     <body>
         <!-- Prepare a container-->
@@ -22,32 +16,25 @@
         <!-- import babel to support the function to transfer jsx into js-->
         <script type="text/javascript" src="../js/babel.min.js"></script>
 
-
         <script type="text/babel">
-
+            //simulate some data
+            const data = ['Angular', 'React', 'Vu']
             //1.Create a virtual DOM
-            /*const VDOM = (
-                <h2 id="heading">
-                    <span>Hello React</span>
-                </h2>
+            const VDOM = (
+                <div>
+                    <h1>Frontend js framework list</h1>
+                    <ul>
+                        {
+                            data.map((item, index)=>{
+                                return <li key={index}>{item}</li>
+                            })
+                        }
+                    </ul>
+                </div>
             )
-            */
-           //jsx
-           const myId = 'heading'
-           const myData = 'HelLo ReAct'
-           const VDOM = (
-            <div>
-                <h2 className="title" id={myId.toLowerCase()}>
-                    <span style={{color: 'white', fontSize:'30px'}}>{myData.toLowerCase()}</span>
-                </h2>
-                <input type="text" />
-            </div>
-            )
-
-            //2.Display the virtual DOM on screen
-            ReactDOM.render(VDOM,document.getElementById('test'))
-
-            /*
+            //2.Render the virtual DOM display on the UI
+            ReactDOM.render(VDOM, document.getElementById('test'))
+             /*
                 jsx grammar
                     1.No quotation marks during the process of defining virtual DOM
                     2.Js expression in label should be contained in the {}
