@@ -15,3 +15,13 @@ features
 
 JSON:- parse
      - stringify
+
+Module:
+  A js provides specific functions(Js file typically).
+  Why module: As work and logic increase, code will be more complex.
+  Reuse, improve efficiency.
+
+Component:
+  A set includes codes and resources(html, css, js, image etc.)
+  Why: A website could be complex, make similar parts as components can be reused and improve efficiency.
+
