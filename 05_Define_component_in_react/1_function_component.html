@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>1.Function component</title>
+    </head>
+    <body>
+        <!-- Prepare a container-->
+        <div id="test"></div>
+
+        <!-- import react core library-->
+        <script type="text/javascript" src="../js/react.development.js"></script>
+        <!-- import react-dom to support the react to control the DOM-->
+        <script type="text/javascript" src="../js/react-dom.development.js"></script>
+        <!-- import babel to support the function to transfer jsx into js-->
+        <script type="text/javascript" src="../js/babel.min.js"></script>
+
+        <script type="text/babel">
+            //1.Create function component
+            function MyComponent(){
+                return <h2>This is a function component</h2>
+            }
+            //2.Rendering component to interface
+            ReactDOM.render(<MyComponent/>, document.getElementById('test'))
+            /*Render process:
+                1.React resolve component label, find the component
+                2.The component is defined by function, 
+                call the function and transferthe return virtual DOM into true DOM,
+                then display on the interface.
+            */
+        </script>
+
+    </body>
+</html>
