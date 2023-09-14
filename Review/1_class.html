@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>1.Function component</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            //create a class
+            class Person{
+                constructor(name, age){
+                    //what is 'this' here? -- instance object of class
+                    this.name = name
+                    this.age = age
+                }
+                //normal methods
+                speak(){
+                    //where is speak method? -- prototype object of class
+                    console.log('My name is ${this.name}. my age is ${this.age}');
+                }
+            }
+            //create an instance object
+            const p1 = new Person('tom', 18)
+
+            console.log(p1);
+            p1.speak()
+
+            //create another class, extends the last class
+            class Student extends Person {
+                constructor(name, age, grade){
+                    super(name, age)
+                    this.grade = grade
+                }
+                //rewrite the method extends from father's class
+                speak(){
+                    console.log('My name is ${this.name}. my age is ${this.age}, my education is${this.grade}');
+                }
+            }
+
+            const s1 = new Student('James', 20, 'Level 12')
+            console.log(s1);
+            s1.speak()
+
+            /* 
+                summary:
+                    1.constructor is not necessary in class, required when making changes on instance object, such as add propoties.
+                    2.if B class extends A class, and A class has constructor, there must has a super() in B class
+                    3.The methods defined in class, are in the prototype object, for instance object to use
+            */
+        </script>
+    </body>
+</html>
