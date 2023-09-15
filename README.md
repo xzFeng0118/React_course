@@ -25,3 +25,7 @@ Component:
   A set includes codes and resources(html, css, js, image etc.)
   Why: A website could be complex, make similar parts as components can be reused and improve efficiency.
 
+Components' instance core propoties:
+  1.state
+  2.props
+  3.refs
