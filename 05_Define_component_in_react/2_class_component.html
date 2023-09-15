@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>2.Class component</title>
+    </head>
+    <body>
+        <!-- Prepare a container-->
+        <div id="test"></div>
+
+        <!-- import react core library-->
+        <script type="text/javascript" src="../js/react.development.js"></script>
+        <!-- import react-dom to support the react to control the DOM-->
+        <script type="text/javascript" src="../js/react-dom.development.js"></script>
+        <!-- import babel to support the function to transfer jsx into js-->
+        <script type="text/javascript" src="../js/babel.min.js"></script>
+
+        <script type="text/babel">
+            //1.Create class component
+            class MyComponent extends React.Component
+            {
+                render(){
+                    //where is render method? -- prototype object of class MyComponent, for instance to use
+                    //who is this in render? -- instance object of MyComponent <=> Component instance object of MyComponent
+                    console.log('This in render:', this);
+                    return <h2>Class Component</h2>
+                }
+            }
+
+            //Rendering component to the ui
+            ReactDOM.render(<MyComponent/>, document.getElementById('test'))
+            /*
+                What happend after ReactDOM.render(<MyComponent/>....)
+                    1.React resolve label of component, find the MyComponent
+                    2.The component is definde by class, create new instance for this class, transfer the render method from prototype
+                    3.Transfer the return virtualDOM into realDOM, then display on screen
+            */
+        </script>
+
+    </body>
+</html>
