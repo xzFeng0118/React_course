@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>This</title>
+    </head>
+    <body>
+        <script type="text/javascript" >
+            class Person {
+                constructor(name, age){
+                    this.name = name
+                    this.age = age
+                }
+                //this in study is the Person instance
+                study(){
+                    console.log(this);
+                }
+            }
+
+            const p1 = new Person('tom', 18)
+            p1.study() //call method study by instance
+            const x = p1.study
+            x()
+
+            function demo(){
+                'use strict'
+                console.log(this);
+            }
+            function demo2(){
+                console.log(this);
+            }
+            demo()
+            demo2()
+        </script>
+    </body>
+</html>

@@ -24,11 +24,20 @@
                     this.state = {isHot:true}
                 }
                 render(){
-                    return <h1>Today is so {this.state.isHot ? 'Hot' : 'Cold'}</h1>
+                    const {isHot} = this.state
+                    return <h1 onClick={this.changeWeather}>Today is so {this.state.isHot ? 'Hot' : 'Cold'}</h1>
+                }
+                changeWeather(){
+                    //changeWeather should be put on the weather's prototype object, for instance to use
+                    //changeWeather as the call of onClick, its direct call, not called by instance
+                    //the function in class is in strict mode defaulted, 'this' in changeWeather is undefined
+                    //if it's not in strict mode, it would point to window defaulted
+                    console.log(this.state.isHot)
                 }
             }
 
             ReactDOM.render(<Weather/>, document.getElementById('test'))
+
         </script>
 
     </body>
