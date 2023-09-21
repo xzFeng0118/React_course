@@ -22,6 +22,7 @@
                 constructor(props){
                     super(props)
                     this.state = {isHot:true}
+                    this.changeWeather = this.changeWeather.bind(this)
                 }
                 render(){
                     const {isHot} = this.state
@@ -29,9 +30,17 @@
                 }
                 changeWeather(){
                     //changeWeather should be put on the weather's prototype object, for instance to use
-                    //changeWeather as the call of onClick, its direct call, not called by instance
+                    //changeWeather as the callback of onClick, its direct call, not called by instance
                     //the function in class is in strict mode defaulted, 'this' in changeWeather is undefined
                     //if it's not in strict mode, it would point to window defaulted
+                    
+                    //get the original value of isHot
+                    const isHot = this.state.isHot
+                    //! state cannot be changed directly
+                    //this.state.isHot = !isHot
+
+                    //state must be changed by setState. The change is to combine, not replace
+                    this.setState({isHot:!isHot})
                     console.log(this.state.isHot)
                 }
             }
