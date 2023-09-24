@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>State</title>
+    </head>
+    <body>
+        <!-- Prepare a container-->
+        <div id="test"></div>
+
+        <!-- import react core library-->
+        <script type="text/javascript" src="../js/react.development.js"></script>
+        <!-- import react-dom to support the react to control the DOM-->
+        <script type="text/javascript" src="../js/react-dom.development.js"></script>
+        <!-- import babel to support the function to transfer jsx into js-->
+        <script type="text/javascript" src="../js/babel.min.js"></script>
+
+        <script type="text/babel">
+            //1. Create a component
+            class Weather extends React.Component{
+                //Assign the content directly to the property
+                state = {isHot:true}
+
+                render(){
+                    const {isHot} = this.state
+                    return <h1 onClick={this.changeWeather}>Today is so {this.state.isHot ? 'Hot' : 'Cold'}</h1>
+                }
+
+                //Assign + Arrow function
+                changeWeather = ()=>{
+                    const isHot = this.state.isHot
+                    this.setState({isHot:!isHot})
+                    
+                }
+            }
+
+            ReactDOM.render(<Weather/>, document.getElementById('test'))
+
+        </script>
+
+    </body>
+</html>
