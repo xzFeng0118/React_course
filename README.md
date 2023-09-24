@@ -29,3 +29,13 @@ Components' instance core propoties:
   1.state
   2.props
   3.refs
+
+State
+  1.The state is the most important property in the component object, value is the object(can contain multiple key-value combination)
+  2.Component is a kind of state machine, update the UI display by updating components' state(re-render compoent)
+  Attention:
+    1.The 'this' in render method is the component instance object.
+    2.The 'this' in customize method is undefined, how to solve?
+      a.Binding 'this' through function_object.bind() 
+      b.Arrow function
+    3.The state data only can be changed by setState method.
