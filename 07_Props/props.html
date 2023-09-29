@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Props</title>
+    </head>
+    <body>
+        <!-- Prepare a container-->
+        <div id="test"></div>
+
+        <!-- import react core library-->
+        <script type="text/javascript" src="../js/react.development.js"></script>
+        <!-- import react-dom to support the react to control the DOM-->
+        <script type="text/javascript" src="../js/react-dom.development.js"></script>
+        <!-- import babel to support the function to transfer jsx into js-->
+        <script type="text/javascript" src="../js/babel.min.js"></script>
+
+        <script type="text/babel">
+            class Person extends React.Component{
+                render(){
+                    const {name, gender, age} = this.props
+                    return(
+                        <ul>
+                            <li>Name: {name}</li>
+                            <li>Gender: {gender}</li>
+                            <li>Age: {age}</li>
+                        </ul>
+                    )
+                }
+            }
+            const p = {name: 'jerry', gender: 'male', age: 19}
+            ReactDOM.render(<Person {...p}/>, document.getElementById('test'))
+        </script>
+</body>
+</html>
