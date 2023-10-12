@@ -13,6 +13,10 @@ features
   2. Use React grammar to develop for mobile end in React Native.
   3. Use virtual DOM + Diffing algorithm to reduce interaction with real DOM
 
+JSX grammar:
+  JSX adds HTML into JavaScript,translated to Javascript and execute by browser. During the development, JSX would be translated to JS in packaging process, translator is Babel.
+
+  
 JSON:- parse
      - stringify
 
