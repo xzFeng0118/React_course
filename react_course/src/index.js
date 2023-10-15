@@ -2,7 +2,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import {createRoot} from 'react-dom/client'
-import App from './01_Components/class'
+import App from './01_Components/function'
 
 //react version 18
 const container=document.getElementById("root")
